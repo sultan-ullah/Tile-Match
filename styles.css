@@ -46,6 +46,7 @@ main {
 .thefront, .theback {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    z-index: 1;
 }
 
 .thecard {
