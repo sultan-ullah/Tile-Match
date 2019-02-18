@@ -13,8 +13,6 @@ body {
     margin-top: 0px;
     text-align: center;
     font-size: 50px;
-    /* border: 2px solid black; */
-    /* line-height: 3em; */
 }
 
 main {
@@ -28,6 +26,7 @@ main {
     position: relative;
     width: 100%;
     height: 100%;
+    background: transparent;
     perspective: 1000px;
 }
 
@@ -50,7 +49,6 @@ main {
 
 .thefront {
     background: black;
-    z-index: 1;
 }
 
 .theback {
