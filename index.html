@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="matching-game.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Match</h1>
-    </div>
-
+    <p class="header">Tile/Match</p>
+    
     <div class="wrapper">
-        <div class="maincontainer">
-            <div flipped="false" class="thecard" id="thecard">
+        <div class="container">
+            <div class="thecard">
                 <div  class="thefront"></div>
                 <div id="back" class="theback"></div>
             </div>
         </div>
         
-        <div class="maincontainer">
+        <div class="container">
             <div class="thecard">
                 <div class="thefront">
                     
@@ -32,29 +31,7 @@
             </div>
         </div>
 
-        <div class="maincontainer">
-            <div class="thecard">
-                <div class="thefront">
-                    
-                </div>
-                <div class="theback">
-                    
-                </div>
-            </div>
-        </div>
-            
-        <div class="maincontainer">
-            <div class="thecard">
-                <div class="thefront">
-                    
-                </div>
-                <div class="theback">
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="maincontainer">
+        <div class="container">
             <div class="thecard">
                 <div class="thefront">
                     
@@ -65,7 +42,7 @@
             </div>
         </div>
             
-        <div class="maincontainer">
+        <div class="container">
             <div class="thecard">
                 <div class="thefront">
                     
@@ -75,11 +52,31 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script type="text/javascript" src="matching-game.js"></script>
-
-
+        <div class="container">
+            <div class="thecard">
+                <div class="thefront">
+                    
+                </div>
+                <div class="theback">
+                    
+                </div>
+            </div>
+        </div>
+            
+        <div class="container">
+            <div class="thecard">
+                <div class="thefront">
+                    
+                </div>
+                <div class="theback">
+                    
+                </div>
+            </div>
+        </div>
+   
+    <script type="text/javascript" src="initialization.js"></script>
+    <script type="text/javascript" src="logic.js"></script>
 
 </body>
 </html>
