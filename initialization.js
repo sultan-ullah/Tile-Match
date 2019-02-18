@@ -39,6 +39,6 @@ function shuffle(array) {
   for(var i = 0; i < 6; i++) {
       var card = cards[i];
       card.style.backgroundColor = combos[i]['color'];
-      card.innerHTML = '<p>' + combos[i]['letter'] + '</p>';
+      card.innerHTML = combos[i]['letter'];
   }
   
