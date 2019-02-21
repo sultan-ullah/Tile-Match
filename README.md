@@ -4,7 +4,7 @@ A responsive and animated tile matching game made with HTML5, CSS3 and JavaScrip
 
 ## How to Play
 
-Click or tap the tiles depending on wether you are on mobile, tablet or browser and try to match all the pictures together
+Click or tap the tiles depending on whether you are on mobile, tablet or browser and try to match all the pictures together
 
 ## Lessons Learned
 
