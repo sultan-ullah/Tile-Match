@@ -45,6 +45,15 @@ for(let i = 0; i < numCards; i++) {
     backs[i].innerHTML = combos[i].icon;
 }
 
+// reset tiles to all face back
+const resetTiles = () => {
+    let cards = document.getElementsByClassName('card');
+    for(var i = 0; i < cards.length; i++) {
+        cards[i].style.transform = "";
+    }
+  
+}
+
 let cardToMatch = null;
 let score = 0;
 
@@ -78,45 +87,7 @@ function flipCard(event) {
     }, 500);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const resetTiles = () => {
-    let cards = document.getElementsByClassName('card');
-    for(var i = 0; i < cards.length; i++) {
-        cards[i].style.transform = "";
-    }
-  
-}
-
-
-
-
-
-
-
-
-let positions = [...Array(numCards).keys()];
-
-
-
-
-
-
-
-
+// add click event listener to all cards
 let fronts = document.getElementsByClassName("front");
 for(let i = 0; i < numCards; i++) {
     fronts[i].addEventListener('click', flipCard);
