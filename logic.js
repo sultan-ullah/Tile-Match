@@ -1,5 +1,5 @@
 let colours = ['#29B6F6', '#9CCC65', '#FF7043', '#FFCA28', '#43A047', '#A1887F', '#ad5187'];
-let icons = ['dog', 'cat', 'paw', 'pizza', 'hamburger', 'bone', 'car'];
+let icons = ['dog', 'cat', 'paw', 'pizza-slice', 'hamburger', 'bone', 'car'];
 let numCards = 6;
 
 // helper function to get a random colour
@@ -11,31 +11,55 @@ const getRandomColour = () => {
 // helper function to get a random icon
 const getRandomIcon = () => {
     let iconIndex = Math.floor(Math.random()*icons.length);
-    console.log(iconIndex);
     let iconHtml = document.createElement('i');
-    iconHtml.className = 'fas fa-' + icons.splice(iconIndex, 1) + ' fa-2x';
-    console.log(iconHtml.outerHTML);
+    iconHtml.className = 'fas fa-' + icons.splice(iconIndex, 1) + ' fa-1x';
     return iconHtml.outerHTML;
 }
 
+// shuffle array
+const shuffle = (a) => {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
 
-var cardToMatch = null;
-var score = 0;
+// create icon and colour combos
+let combos = [];
+for (let i = 0; i < numCards/2; i++) {
+    combos.push({ 'color': getRandomColour(), 'icon': getRandomIcon() });
+}
+
+// shuffle positions of the cards
+combos.push(...combos);
+shuffle(combos);
+
+// set the backs of each card to each combo
+let backs = document.getElementsByClassName("back");
+for(let i = 0; i < numCards; i++) {
+    backs[i].style.backgroundColor = combos[i].color;
+    backs[i].innerHTML = combos[i].icon;
+}
+
+let cardToMatch = null;
+let score = 0;
 
 // callback function for card click event
 function flipCard(event) {
     this.disabled = true;
-    var card = this.parentElement;
-    var textOnBack = card.children[1].textContent;
+    let card = this.parentElement;
+    let icon = card.children[1].innerHTML;
+
     card.style.transform = "rotateY(180deg)";
 
-    setTimeout(function(){
-        
-        if (cardToMatch !== null) {
-            var textToMatch = cardToMatch.children[1].textContent;
-            if (textOnBack === textToMatch) {
-                console.log("Matched!");
-                score++;
+    setTimeout( () => {
+        if( cardToMatch ) {
+            if ( icon === cardToMatch.children[1].innerHTML ) {
+                score++;    
             } else {
                 card.style.transform = "";
                 cardToMatch.style.transform = "";
@@ -45,10 +69,10 @@ function flipCard(event) {
             cardToMatch = card;
         }
 
-        if (score === 3) {
-            alert("Good Job!");
-            score = 0;
+        if ( score === 3 ) {
+            alert('Good Job!');
             resetTiles();
+            score = 0;
         }
 
     }, 500);
@@ -84,24 +108,10 @@ const resetTiles = () => {
 
 
 
+let positions = [...Array(numCards).keys()];
 
 
 
-
-
-
-
-
-
-
-
-
-
-let backs = document.getElementsByClassName("back");
-for(let i = 0; i < numCards; i++) {
-    backs[i].style.backgroundColor = getRandomColour();
-    backs[i].innerHTML = getRandomIcon();
-}
 
 
 
