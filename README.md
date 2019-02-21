@@ -12,3 +12,7 @@ Click or tap the tiles depending on wether you are on mobile, tablet or browser 
 - JavaScript syntax using ECMAScript 6
 - Grid layout in CSS3
 - Game logic
+
+## Live Demo
+
+https://sultan-ullah.github.io/Tile-Match/
