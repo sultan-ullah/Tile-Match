@@ -15,4 +15,4 @@ Click or tap the tiles depending on whether you are on mobile, tablet or browser
 
 ## Live Demo
 
-https://sultan-ullah.github.io/Tile-Match/
+https://sultan-ullah.github.io/tile-match/
